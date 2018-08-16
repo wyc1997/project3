@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Topping(models.Model):
@@ -30,6 +31,7 @@ class Dinner_Platter(models.Model):
     price = models.DecimalField(decimal_places = 2, max_digits = 64)
 
 class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     pizza = models.ManyToManyField(Pizza, blank=True)
     sub = models.ManyToManyField(Sub, blank=True)
     pasta = models.ManyToManyField(Pasta, blank=True)

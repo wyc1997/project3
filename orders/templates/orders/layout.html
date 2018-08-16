@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+  <div id="top">
+    <div id="user_bar">
+      <span style="float: left; line-height: 35px; height: 35px;">Welcome to PizzaJoint!</span>
+      {% block body1 %}
+      {% endblock %}
+    </div>
+    <div id="top_pic">
+    </div>
+  </div>
+  <div id="main">
+    <div id="main_middle">
+    {% block body2 %}
+    {% endblock %}
+    {% block body3 %}
+    {% endblock %}
+    </div>
+
+
+  </div>
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

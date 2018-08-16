@@ -1,0 +1,31 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+welcome!
+{% endblock %}
+
+{% block body1%}
+{% if isAuthenticated %}
+    <span class="auth">login as: {{user.username}}    <a href="{% url 'logout' %}">logout</a></span>
+{% else %}
+    <a class="auth" href="{% url 'login_page' %}">login</a>
+{% endif %}
+{% endblock %}
+
+{% block body2 %}
+<div id="ver_bar_left">
+    <table id="ver_table_left">
+        <tr><td id="tab_piz" class="td_left">Pizza</td></tr>
+        <tr><td id="tab_sub" class="td_left">Sub</td></tr>
+        <tr><td id="tab_pas" class="td_left">Pasta</td></tr>
+        <tr><td id="tab_sal" class="td_left">Salad</td></tr>
+        <tr><td id="tab_din" class="td_left">Dinner Platter</td></tr>
+    </table>
+</div>
+{% endblock %}
+{% block body3 %}
+<div id="mid_content">
+    <table id="mid_table">
+    </table>
+</div>
+{% endblock %}
