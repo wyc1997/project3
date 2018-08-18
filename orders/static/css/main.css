@@ -24,6 +24,7 @@
 #ver_table_left {
   /* border-right: black 2px solid; */
   border-collapse: collapse;
+  width: 100%;
 }
 
 .td_left {
@@ -37,9 +38,22 @@
 
 #mid_content {
   width: 60%;
+  float: left;
 }
 
 #tab_piz {
   border-right: None;
   background-color: white;
+}
+
+#ver_bar_right {
+  width: 19%;
+  border-left: black 2px solid;
+  float: right;
+  height: 300px;
+}
+
+#ord_lis {
+  width: 100%;
+  border-bottom: black 1px solid;
 }

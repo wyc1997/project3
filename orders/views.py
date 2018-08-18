@@ -2,11 +2,20 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
 from django.urls import reverse
+import json
+from django.core.serializers import serialize
+
+from .models import Pizza, Salad, Sub, Order, Dinner_Platter, Pasta, Topping
 
 # Create your views here.
 def index(request):
     if request.user.is_authenticated:
         context = {
+            "toppings": Topping.objects.all(),
+            "subs": Sub.objects.all(),
+            "pastas": Pasta.objects.all(),
+            "dins": Dinner_Platter.objects.all(),
+            "salads": Salad.objects.all(),
             "user": request.user,
             "isAuthenticated": True
         }

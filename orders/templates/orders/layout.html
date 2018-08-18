@@ -27,5 +27,77 @@
   </div>
 
 <script src="{% static 'js/index.js' %}"></script>
+
+<template id="regular_pizza_tem">
+  <tr>
+    <td>
+      <h5>Regular Pizza</h5>
+      <span>Size:</span>
+      <select id="size_drop_down">
+        <option value="Small">Small</option>
+        <option value="Large">Large</option>
+      </select>
+      <br/>
+      <span>Add on:</span>
+      <select id="addon_drop_down">
+        <option value="cheese">Cheese</option>
+        <option value="1_topping">1 topping</option>
+        <option value="2_toppings">2 toppings</option>
+        <option value="3_toppings">3 toppings</option>
+        <option value="special">Special</option>
+      </select>
+      <br/>
+      <template id="topping_tem">
+        <span>Topping: </span>
+        <select id="topping_drop_down">
+          {% for topping in toppings %}
+            <option value="{{ topping }}">{{ topping }}</option>
+          {% endfor %}
+        </select>
+        <br/>
+      </template>
+    </td>
+  </tr>
+</template>
+<template id="sub_tem">
+  {% for sub in subs %}
+    <tr>
+      <td>
+        <span>{{ sub }}</span><br/>
+        <span>${{ sub.price }}</span>
+      </td>
+    </tr>
+  {% endfor %}
+</template>
+<template id="pas_tem">
+  {% for pasta in pastas %}
+    <tr>
+      <td>
+        <span>{{ pasta }}</span><br/>
+        <span>${{ pasta.price }}</span>
+      </td>
+    </tr>
+  {% endfor %}
+</template>
+<template id="sal_tem">
+  {% for salad in salads %}
+    <tr>
+      <td>
+        <span>{{ salad }}</span><br/>
+        <span>${{ salad.price }}</span>
+      </td>
+    </tr>
+  {% endfor %}
+</template>
+<template id="din_tem">
+  {% for din in dins %}
+    <tr>
+      <td>
+        <span>{{ din }}</span><br/>
+        <span>${{ din.price }}</span>
+      </td>
+    </tr>
+  {% endfor %}
+</template>
 </body>
 </html>
