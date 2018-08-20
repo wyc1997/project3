@@ -29,8 +29,13 @@ welcome!
     </table>
 </div>
 <div id="ver_bar_right">
-    <h5 id="ord_lis">Order List</h5>
-    <table id="ver_table_right">
-    </table>
+    <form method="post">
+        {% csrf_token %}
+        <h5 id="ord_lis">Order List</h5>
+        <table id="ver_table_right">
+        </table>
+        <span>Number of Items: </span><span id="total_item">0</span><br/>
+        <span>Total Price: $</span><span id="total_price">0.00</span><br/>
+    </form>
 </div>
 {% endblock %}

@@ -56,6 +56,7 @@
         </select>
         <br/>
       </template>
+      <button>add to order list</button>
     </td>
   </tr>
 </template>
@@ -63,8 +64,9 @@
   {% for sub in subs %}
     <tr>
       <td>
-        <span>{{ sub }}</span><br/>
-        <span>${{ sub.price }}</span>
+        <span class="{{ sub }}">{{ sub.size }} {{ sub.name }}</span><br/>
+        <span class="{{ sub }}">${{ sub.price }}</span>
+        <button id="{{ sub }}" class="add_order_butt">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -73,8 +75,9 @@
   {% for pasta in pastas %}
     <tr>
       <td>
-        <span>{{ pasta }}</span><br/>
-        <span>${{ pasta.price }}</span>
+        <span class="{{ pasta }}">{{ pasta.name }}</span><br/>
+        <span class="{{ pasta }}">${{ pasta.price }}</span>
+        <button id="{{ pasta }}" class="add_order_butt">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -83,8 +86,9 @@
   {% for salad in salads %}
     <tr>
       <td>
-        <span>{{ salad }}</span><br/>
-        <span>${{ salad.price }}</span>
+        <span class="{{ salad }}">{{ salad.name }}</span><br/>
+        <span class="{{ salad }}">${{ salad.price }}</span>
+        <button id="{{ salad }}" class="add_order_butt">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -93,11 +97,21 @@
   {% for din in dins %}
     <tr>
       <td>
-        <span>{{ din }}</span><br/>
-        <span>${{ din.price }}</span>
+        <span class="{{ din }}">{{ din.size }} {{ din.name }}</span><br/>
+        <span class="{{ din }}">${{ din.price }}</span>
+        <button id="{{ din }}" class="add_order_butt">add to order list</button>
       </td>
     </tr>
   {% endfor %}
 </template>
+<template id="order_list_item_1">
+  <tr id="tr_0" class="tr_right">
+    <td>
+      <span id="order_list_span_name"></span><br/>
+      <span>Quantity: 1</span><br/>
+      <span>Price: </span><span id="order_list_span_price"></span>
+    </td>
+  </tr>
+</tempate>
 </body>
 </html>

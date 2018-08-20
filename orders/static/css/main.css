@@ -37,7 +37,7 @@
 }
 
 #mid_content {
-  width: 60%;
+  width: 50%;
   float: left;
 }
 
@@ -47,13 +47,23 @@
 }
 
 #ver_bar_right {
-  width: 19%;
+  width: 29%;
   border-left: black 2px solid;
   float: right;
-  height: 300px;
+  height: 500px;
 }
 
 #ord_lis {
   width: 100%;
   border-bottom: black 1px solid;
+}
+
+.tr_right {
+  border-top: black 1px dashed;
+  border-bottom: black 1px dashed;
+  width: 100%;
+}
+
+#ver_table_right {
+  border-collapse: collapse;
 }
