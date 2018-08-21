@@ -67,3 +67,7 @@
 #ver_table_right {
   border-collapse: collapse;
 }
+
+.quantity_input {
+  width: 30px;
+}

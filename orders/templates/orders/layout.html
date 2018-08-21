@@ -108,10 +108,14 @@
   <tr id="tr_0" class="tr_right">
     <td>
       <span id="order_list_span_name"></span><br/>
-      <span>Quantity: 1</span><br/>
+      <span>Quantity: </span>
+      <button type="button" id="plus_butt" onclick="add_one(this)">+</button>
+      <span id="qty" >1</span>
+      <button type="button" id="sub_butt" onclick="sub_one(this)">-</button>
+      <button type="button" class="cancel_butt" onclick="cancel(this)">Cancel</button><br/>
       <span>Price: </span><span id="order_list_span_price"></span>
     </td>
   </tr>
-</tempate>
+</template>
 </body>
 </html>

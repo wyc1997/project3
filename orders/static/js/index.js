@@ -5,11 +5,12 @@ var pasta_data;
 var salad_data;
 var dinner_platter_data;
 var topping_data;
-var num_item = 1;
+var num_item = 0;
 var total_price = 0.0
 
 document.addEventListener("DOMContentLoaded", () => {
     populate_table(presented);
+
 
 });
 
@@ -24,7 +25,6 @@ document.querySelectorAll(".td_left").forEach(td => {
         populate_table(presented);
     }
 });
-
 
 
 function populate_table(presented) {
@@ -75,15 +75,44 @@ function populate_table(presented) {
         button.onclick = () => {
             var data = document.querySelectorAll(`.${button.id}`);
             document.querySelector("#ver_table_right").innerHTML += document.querySelector("#order_list_item_1").innerHTML;
+
             document.querySelector("#order_list_span_name").innerHTML = data[0].innerHTML;
-            document.querySelector("#order_list_span_price").innerHTML = data[1].innerHTML;
-            document.querySelector("#order_list_span_name").id = `order_list_span_name_${num_item}`;
-            document.querySelector("#order_list_span_price").id = `order_list_span_price_${num_item}`;
-            document.querySelector("#tr_0").id = `tr_${num_item}`;
-            document.querySelector("#total_item").innerHTML = num_item;
+            document.querySelector("#order_list_span_name").id = `order_list_span_name_${data[0].innerHTML.replace(" ", "_")}`;
+
+            document.querySelector("#tr_0").id = `tr_${data[0].innerHTML}`;
+            document.querySelector("#qty").id = `qty_${data[0].innerHTML.replace(" ", "_")}`;
+
             total_price += parseFloat(data[1].innerHTML.substring(1));
-            document.querySelector("#total_price").innerHTML = total_price;
+
             num_item++;
+            document.querySelector("#total_item").innerHTML = num_item;
         }
     })
+
+};
+
+function add_one(e) {
+    e.nextSibling.nextSibling.innerHTML++;
+    num_item++;
+    document.querySelector("#total_item").innerHTML = num_item;
+
+};
+
+function sub_one(e) {
+    var element = e.previousSibling.previousSibling;
+    element.innerHTML--;
+    if (element.innerHTML < 1) {
+        element.innerHTML = 1;
+    }
+    num_item--;
+    if (num_item < 1) {
+        num_item = 1;
+    }
+    document.querySelector("#total_item").innerHTML = num_item;
+};
+
+function cancel(e) {
+    e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+    num_item -= e.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML;
+    document.querySelector("#total_item").innerHTML = num_item;
 };
