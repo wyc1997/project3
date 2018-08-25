@@ -64,9 +64,9 @@
   {% for sub in subs %}
     <tr>
       <td>
-        <span class="{{ sub }}">{{ sub.size }} {{ sub.name }}</span><br/>
-        <span class="{{ sub }}">${{ sub.price }}</span>
-        <button id="{{ sub }}" class="add_order_butt">add to order list</button>
+        <span>{{ sub.size }} {{ sub.name }}</span><br/>
+        <span>$</span><span>{{ sub.price }}</span>
+        <button onclick="add_item(this)" id="{{ sub }}" class="add_order_butt" type="button">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -75,9 +75,9 @@
   {% for pasta in pastas %}
     <tr>
       <td>
-        <span class="{{ pasta }}">{{ pasta.name }}</span><br/>
-        <span class="{{ pasta }}">${{ pasta.price }}</span>
-        <button id="{{ pasta }}" class="add_order_butt">add to order list</button>
+        <span>{{ pasta.name }}</span><br/>
+        <span>$</span><span>{{ pasta.price }}</span>
+        <button onclick="add_item(this)" id="{{ pasta }}" class="add_order_butt" type="button">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -86,9 +86,9 @@
   {% for salad in salads %}
     <tr>
       <td>
-        <span class="{{ salad }}">{{ salad.name }}</span><br/>
-        <span class="{{ salad }}">${{ salad.price }}</span>
-        <button id="{{ salad }}" class="add_order_butt">add to order list</button>
+        <span>{{ salad.name }}</span><br/>
+        <span>$</span><span>{{ salad.price }}</span>
+        <button onclick="add_item(this)" id="{{ salad }}" class="add_order_butt" type="button">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -97,9 +97,9 @@
   {% for din in dins %}
     <tr>
       <td>
-        <span class="{{ din }}">{{ din.size }} {{ din.name }}</span><br/>
-        <span class="{{ din }}">${{ din.price }}</span>
-        <button id="{{ din }}" class="add_order_butt">add to order list</button>
+        <span>{{ din.size }} {{ din.name }}</span><br/>
+        <span>$</span><span>{{ din.price }}</span>
+        <button onclick="add_item(this)" id="{{ din }}" class="add_order_butt" type="button">add to order list</button>
       </td>
     </tr>
   {% endfor %}
@@ -113,7 +113,7 @@
       <span id="qty" >1</span>
       <button type="button" id="sub_butt" onclick="sub_one(this)">-</button>
       <button type="button" class="cancel_butt" onclick="cancel(this)">Cancel</button><br/>
-      <span>Price: </span><span id="order_list_span_price"></span>
+      <span>Price: $</span><span id="order_list_span_price"></span>
     </td>
   </tr>
 </template>
